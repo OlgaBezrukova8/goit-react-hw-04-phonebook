@@ -1,6 +1,8 @@
+import {TitleSection} from './Title.module'
+
 export const Title = ({ title, children }) => (
   <>
-    <h2>{title}</h2>
+    <TitleSection>{title}</TitleSection>
     {children}
   </>
 );
