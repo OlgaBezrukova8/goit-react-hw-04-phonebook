@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Label, Input, Button } from './ContactList.module';
+import { Container, Label, Input, Button } from './ContactForm.module';
 
 export class ContactForm extends Component {
   render() {
