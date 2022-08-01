@@ -1,16 +1,18 @@
+import { Container, Item, Button, Text } from './ContactList.module';
+
 export const ContactList = ({ contacts, onDeleteContact }) => {
   return (
-    <div>
+    <Container>
       <ul>
         {contacts.map(({ id, name, number }) => (
-          <li key={id}>
-            <p>
+          <Item key={id}>
+            <Text>
               {name}: {number}
-            </p>
-            <button onClick={() => onDeleteContact(id)}>Delete</button>
-          </li>
+            </Text>
+            <Button onClick={() => onDeleteContact(id)}>Delete</Button>
+          </Item>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };

@@ -6,7 +6,6 @@ padding: 20px;
 
 export const Label = css.label`
 display: block;
-margin-bottom: 20px;
 
 font-size: 14px;
 font-weight: 600;

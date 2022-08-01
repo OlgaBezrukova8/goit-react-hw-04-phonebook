@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Label, Input, Button } from './ContactForm.module';
+import { Container, Label, Input } from './ContactForm.module';
 
 export class ContactForm extends Component {
   render() {
@@ -32,7 +32,7 @@ export class ContactForm extends Component {
             />
           </Label>
 
-          <Button type="submit">Add contact</Button>
+          <button type="submit">Add contact</button>
         </form>
       </Container>
     );

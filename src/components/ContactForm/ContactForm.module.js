@@ -27,16 +27,3 @@ outline: none;
     border: 1px solid var(--hover-border-color);
 }
 `;
-
-export const Button = css.button`
-padding: 8px 18px;
-
-border: none;
-border-radius: 4px;
-background-color: var(--button-bg-color);
-
-&:hover, &:focus {
-    transform: scale(1.02);
-    background-color: var(--accent-color);
-}
-`;
