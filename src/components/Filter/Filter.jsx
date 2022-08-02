@@ -1,4 +1,5 @@
 import { Label, Input, Container } from './Filter.module';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ value, onChange }) => (
   <Container>
@@ -8,3 +9,8 @@ export const Filter = ({ value, onChange }) => (
     </Label>
   </Container>
 );
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
