@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import { Container, Label, Input } from './ContactForm.module';
 
 export class ContactForm extends Component {
+  state = {
+    name: '',
+    number: '',
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
-    const { onChange, onSubmit } = this.props;
+    const { onSubmit } = this.props;
 
     return (
       <Container>
@@ -13,7 +23,8 @@ export class ContactForm extends Component {
             <Input
               type="text"
               name="name"
-              onChange={onChange}
+              onChange={this.handleChange}
+              value={this.state.name}
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
@@ -23,7 +34,8 @@ export class ContactForm extends Component {
           <Label>
             Number
             <Input
-              onChange={onChange}
+              value={this.state.number}
+              onChange={this.handleChange}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

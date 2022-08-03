@@ -1,4 +1,6 @@
-import { Container, Item, Button, Text } from './ContactList.module';
+import { ContactItem } from './ContactItem/ContactItem';
+
+import { Container } from './ContactList.module';
 import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
@@ -6,12 +8,12 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
     <Container>
       <ul>
         {contacts.map(({ id, name, number }) => (
-          <Item key={id}>
-            <Text>
-              {name}: {number}
-            </Text>
-            <Button onClick={() => onDeleteContact(id)}>Delete</Button>
-          </Item>
+          <ContactItem
+            key={id}
+            name={name}
+            number={number}
+            onDeleteContact={() => onDeleteContact(id)}
+          />
         ))}
       </ul>
     </Container>

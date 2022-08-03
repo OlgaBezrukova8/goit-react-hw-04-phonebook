@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { Title } from './Title/Title';
@@ -11,11 +10,6 @@ export class App extends Component {
   state = {
     contacts: [],
     filter: '',
-  };
-
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
   };
 
   handleFilter = event => {
@@ -42,7 +36,7 @@ export class App extends Component {
           contacts: [
             ...prevState.contacts,
             {
-              id: nanoid(),
+              id: name.value,
               name: name.value,
               number: number.value,
             },
@@ -75,7 +69,6 @@ export class App extends Component {
         <Title title="Phonebook" />
         <ContactForm
           onSubmit={this.handleSubmit}
-          onChange={this.handleChange}
         />
 
         <Title title="Contacts" />
