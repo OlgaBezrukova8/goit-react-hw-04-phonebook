@@ -4,18 +4,18 @@ import { Container } from './ContactList.module';
 import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
+  const contactsMap = contacts.map(({ id, name, number }) => (
+    <ContactItem
+      key={id}
+      name={name}
+      number={number}
+      onDeleteContact={() => onDeleteContact(id)}
+    />
+  ));
+
   return (
     <Container>
-      <ul>
-        {contacts.map(({ id, name, number }) => (
-          <ContactItem
-            key={id}
-            name={name}
-            number={number}
-            onDeleteContact={() => onDeleteContact(id)}
-          />
-        ))}
-      </ul>
+      <ul>{contactsMap}</ul>
     </Container>
   );
 };
