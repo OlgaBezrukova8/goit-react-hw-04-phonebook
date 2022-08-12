@@ -5,7 +5,7 @@ export const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  function handleChange(event) {
+  const handleChange = event => {
     const { name, value } = event.target;
 
     switch (name) {
@@ -20,7 +20,7 @@ export const ContactForm = ({ onSubmit }) => {
       default:
         break;
     }
-  }
+  };
 
   return (
     <Container>
