@@ -11,8 +11,6 @@ export const App = () => {
     () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
   );
   const [filter, setFilter] = useState('');
-  // const [inputName, setInputName] = useState('');
-  // const [inputNumber, setInputNumber] = useState('');
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
