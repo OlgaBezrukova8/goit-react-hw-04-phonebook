@@ -22,9 +22,16 @@ export const ContactForm = ({ onSubmit }) => {
     }
   };
 
+  const handleReset = event => {
+    if (onSubmit(event)) {
+      setName('');
+      setNumber('');
+    }
+  };
+
   return (
     <Container>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleReset}>
         <Label>
           Name
           <Input

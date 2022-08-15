@@ -11,6 +11,8 @@ export const App = () => {
     () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
   );
   const [filter, setFilter] = useState('');
+  // const [inputName, setInputName] = useState('');
+  // const [inputNumber, setInputNumber] = useState('');
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -33,6 +35,7 @@ export const App = () => {
 
     if (isExists(name.value)) {
       Notify.warning(`${name.value} is already in contacts`);
+      return false;
     } else {
       setContacts(prevState => [
         ...prevState,
@@ -42,6 +45,7 @@ export const App = () => {
           number: number.value,
         },
       ]);
+      return true;
     }
   };
 
